@@ -79,6 +79,10 @@ fancy_echo "Instalando Apache2, PHP7.0, MariaDB e libs necessárias do PHP7.0 e 
   sudo apt-get install -y php7.0 libapache2-mod-php7.0 php7.0-fpm php7.0-mbstring php7.0-mcrypt php7.0-dev php7.0-gd php7.0-json php7.0-mysql php7.0-opcache php7.0-xml php7.0-xmlrpc libapache2-mod-php7.0
   sudo phpenmod mcrypt
   sudo phpenmod mbstring
+  
+fancy_echo "Habilitando o mod_rewrite ..."
+  sudo a2enmod rewrite
+  sudo service apache2 restart
 
 fancy_echo "Instalando PHPMyAdmin ..."
   sudo apt install -y phpmyadmin
@@ -97,13 +101,12 @@ fancy_echo "Baixando Netbeans 8.2 ..."
 fancy_echo "Instalando Netbeans  8.2 ..."
   sudo bash /tmp/netbeans-8.2-php-linux-x64 --silent
   sudo rm -rf /tmp/*
-  
-fancy_echo "Habilitando o mod_rewrite ..."
-  sudo a2enmod rewrite
-  sudo service apache2 restart
 
 fancy_echo "Instalando Deezer ..."
   sudo apt-get install -y deezer-desktop-for-linux
+
+fancy_echo "Instalando GIMP ..."
+  sudo apt-get install -y gimp
   
 fancy_echo "Atualizando sistema ..."
   sudo apt-get update
