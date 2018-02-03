@@ -1,5 +1,7 @@
 #!/bin/sh
 
+## FALTA ATRIBUIR A CÓPIA DO IMPORTAÇÃO AUTOMÁTICA DO VIRTUALHOST, DO VIRTUALBOX USB,...
+
 #######################################################
 #######################################################
 ##    Script para configuração de Ambiente Deepin    ##
