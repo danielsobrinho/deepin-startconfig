@@ -1,0 +1,113 @@
+#!/bin/sh
+
+#######################################################
+#######################################################
+##    Script para configuração de Ambiente Deepin    ##
+##                                                   ##
+##  Criado para Ubuntu por Author Paulo de Almeida   ##
+##       Adaptado e Personalizado para Deepin        ##
+##     por Daniel Sobrinho - danielsobrinho.com      ##
+##                                                   ##
+#######################################################
+#######################################################
+
+fancy_echo() {
+  printf "\n%b\n" "$1\n"
+  sleep 1
+}
+
+check_sistem(){
+  SO=$(sudo cat /etc/issue | tr -s [:space:] | cut -d ' ' -f 1)
+  VERSION=$(sudo cat /etc/issue | tr -s [:space:] | cut -d ' ' -f 2)
+  #MASTERVERSION=$(echo ${VERSION} | cut -d '.' -f 1)
+
+  if [ "${SO}" != "Deepin" ]; then
+    fancy_echo "Ops, não é possível utilizar esse script para SO diferentes do Ubuntu 16";
+    exit 0;
+  fi
+
+  #if [ "${MASTERVERSION}" != "16" ]; then
+  #  fancy_echo "Ops, não é possível utilizar esse script para SO diferentes do Ubuntu 16";
+  #  exit 0;
+  #fi
+}
+
+fancy_echo "Verificando sistema ..."
+  check_sistem
+
+fancy_echo "Atualizando sistema ..."
+  sudo apt-get update
+
+fancy_echo "Instalando Sublime Text ..."
+  sudo apt-get install -y sublime-text
+
+fancy_echo "Instalando git ..."
+  sudo apt-get install -y git
+
+fancy_echo "Instalando curl ..."
+  sudo apt-get install -y curl
+
+fancy_echo "Instalando nano ..."
+  sudo apt-get install -y nano
+
+fancy_echo "Instalando wget ..."
+  sudo apt-get install -y wget
+
+fancy_echo "Instalando lynx ..."
+  sudo apt-get install -y lynx
+
+fancy_echo "Instalando htop ..."
+  sudo apt-get install -y htop
+
+fanc_echo "Instalando byobu ..."
+  sudo apt-get install -y byobu
+
+fancy_echo "Instalando docker ..."
+  # Remove versões antigas
+  #sudo apt-get remove -y docker docker-engine docker.io
+  sudo apt install -y docker docker.io docker-swarm
+
+#fancy_echo "Instalando aplicativos comuns ..."
+#  sudo apt-get install -y 
+
+fancy_echo "Instalando Apache2, PHP7.0, MariaDB e libs necessárias do PHP7.0 e Apache2 ..."
+  sudo apt-get install -y apache2 apache2-doc apache2-utils
+  sudo apache2ctl configtest
+  sudo apt-get install -y mariadb-server mariadb-client
+  sudo apt-get install -y php7.0 libapache2-mod-php7.0 php7.0-fpm php7.0-mbstring php7.0-mcrypt php7.0-dev php7.0-gd php7.0-json php7.0-mysql php7.0-opcache php7.0-xml php7.0-xmlrpc libapache2-mod-php7.0
+  sudo phpenmod mcrypt
+  sudo phpenmod mbstring
+
+fancy_echo "Instalando PHPMyAdmin ..."
+  sudo apt install -y phpmyadmin
+  echo "Include /etc/phpmyadmin/apache.conf" >> /etc/apache2/apache2.conf
+  /etc/init.d/apache2 restart
+
+fancy_echo "Instalando Composer ..."
+  sudo apt install -y composer
+
+fancy_echo "Instalando Workbench (Versão final do Repositório padrão) ..."
+  sudo apt-get install -y mysql-workbench
+
+fancy_echo "Baixando Netbeans 8.2 ..."
+  wget http://download.netbeans.org/netbeans/8.2/final/bundles/netbeans-8.2-php-linux-x64.sh -O /tmp/netbeans-8.2-php-linux-x64
+  sudo chmod +x /tmp/netbeans-8.2-php-linux-x64
+fancy_echo "Instalando Netbeans  8.2 ..."
+  sudo bash /tmp/netbeans-8.2-php-linux-x64 --silent
+  sudo rm -rf /tmp/*
+  
+fancy_echo "Habilitando o mod_rewrite ..."
+  sudo a2enmod rewrite
+  sudo service apache2 restart
+
+fancy_echo "Instalando Deezer ..."
+  sudo apt-get install -y deezer-desktop-for-linux
+  
+fancy_echo "Atualizando sistema ..."
+  sudo apt-get update
+  sudo apt-get upgrade
+
+fancy_echo "Limpando a instalação com pacotes não utilizados ..."
+  sudo apt-get autoclean
+  sudo apt-get clean
+  sudo apt-get autoremove
