@@ -61,8 +61,14 @@ fancy_echo "Instalando lynx ..."
 fancy_echo "Instalando htop ..."
   sudo apt-get install -y htop
 
-fanc_echo "Instalando byobu ..."
+fancy_echo "Instalando byobu ..."
   sudo apt-get install -y byobu
+
+fancy_echo "Instalando NSCD ..."
+  sudo apt-get install -y nscd
+
+fancy_echo "Instalando Laptop Mode Tools ..."
+  sudo apt install laptop-mode-tools
 
 fancy_echo "Instalando docker ..."
   # Remove versões antigas
