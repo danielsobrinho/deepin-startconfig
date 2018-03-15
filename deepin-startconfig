@@ -74,6 +74,9 @@ fancy_echo "Instalando docker ..."
   # Remove versões antigas
   #sudo apt-get remove -y docker docker-engine docker.io
   sudo apt install -y docker docker.io docker-swarm
+  
+fancy_echo "Instalando Repositório Thunderbird Latest Beta More Stable ..."
+  sudo add-apt-repository ppa:mozillateam/thunderbird-next
 
 #fancy_echo "Instalando aplicativos comuns ..."
 #  sudo apt-get install -y 
