@@ -43,6 +43,9 @@ fancy_echo "Atualizando sistema ..."
 fancy_echo "Instalando Sublime Text ..."
   sudo apt-get install -y sublime-text
 
+fancy_echo "Instalando VSCode ..."
+  sudo apt-get install -y vscode
+
 fancy_echo "Instalando git ..."
   sudo apt-get install -y git
 
@@ -67,8 +70,20 @@ fancy_echo "Instalando byobu ..."
 fancy_echo "Instalando NSCD ..."
   sudo apt-get install -y nscd
 
-fancy_echo "Instalando Laptop Mode Tools ..."
-  sudo apt install laptop-mode-tools
+fancy_echo "Instalando SNAP ..."
+  sudo apt install snapd
+
+fancy_echo "Instalando FLATPAK ..."
+  sudo apt install flatpak
+
+fancy_echo "Instalando SPEEDTEST ..."
+  sudo apt install speedtest-cli
+  
+fancy_echo "Instalando TLP ..."
+  sudo apt remove laptop-mode-tools
+  sudo apt install tlp
+  sudo tlp start
+  fancy_echo "Atribuir para inicializa";
 
 fancy_echo "Instalando docker ..."
   # Remove versões antigas
@@ -104,12 +119,12 @@ fancy_echo "Instalando Composer ..."
 fancy_echo "Instalando Workbench (Versão final do Repositório padrão) ..."
   sudo apt-get install -y mysql-workbench
 
-fancy_echo "Baixando Netbeans 8.2 ..."
-  wget http://download.netbeans.org/netbeans/8.2/final/bundles/netbeans-8.2-php-linux-x64.sh -O /tmp/netbeans-8.2-php-linux-x64
-  sudo chmod +x /tmp/netbeans-8.2-php-linux-x64
-fancy_echo "Instalando Netbeans  8.2 ..."
-  sudo bash /tmp/netbeans-8.2-php-linux-x64 --silent
-  sudo rm -rf /tmp/*
+#fancy_echo "Baixando Netbeans 8.2 ..."
+#  wget http://download.netbeans.org/netbeans/8.2/final/bundles/netbeans-8.2-php-linux-x64.sh -O /tmp/netbeans-8.2-php-linux-x64
+#  sudo chmod +x /tmp/netbeans-8.2-php-linux-x64
+#fancy_echo "Instalando Netbeans  8.2 ..."
+#  sudo bash /tmp/netbeans-8.2-php-linux-x64 --silent
+#  sudo rm -rf /tmp/*
 
 fancy_echo "Instalando Deezer ..."
   sudo apt-get install -y deezer-desktop-for-linux
