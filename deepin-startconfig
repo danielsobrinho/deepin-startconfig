@@ -70,6 +70,9 @@ fancy_echo "Instalando byobu ..."
 fancy_echo "Instalando NSCD ..."
   sudo apt-get install -y nscd
 
+fancy_echo "Instalando PM-UTILS ..."
+  sudo apt-get install -y pm-utils
+
 fancy_echo "Instalando SNAP ..."
   sudo apt install snapd
 
