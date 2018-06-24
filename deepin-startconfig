@@ -131,6 +131,9 @@ fancy_echo "Instalando Deezer ..."
 
 fancy_echo "Instalando GIMP ..."
   sudo apt-get install -y gimp
+
+fancy_echo "Instalando GIMP ..."
+  sudo apt-get install -y nautilus nautilus-admin nautilus-wipe nautilus-actions
   
 fancy_echo "Atualizando sistema ..."
   sudo apt-get update
