@@ -70,6 +70,12 @@ fancy_echo "Instalando byobu ..."
 fancy_echo "Instalando NSCD ..."
   sudo apt-get install -y nscd
 
+fancy_echo "Instalando WHOIS ..."
+  sudo apt-get install -y whois
+
+fancy_echo "Instalando OPENSSH SERVER ..."
+  sudo apt-get install -y openssh-server
+
 fancy_echo "Instalando PM-UTILS ..."
   sudo apt-get install -y pm-utils
 
