@@ -1,6 +1,6 @@
 #!/bin/sh
 
-## FALTA ATRIBUIR A CÓPIA DO IMPORTAÇÃO AUTOMÁTICA DO VIRTUALHOST, DO VIRTUALBOX USB, RHYTHMBOX E PLUGIN RHYTHMBOX TRAY ICON
+## FALTA ATRIBUIR A CÓPIA DO IMPORTAÇÃO AUTOMÁTICA DO VIRTUALHOST, DO VIRTUALBOX USB, PLUGIN RHYTHMBOX TRAY ICON, AJUSTE DE SWAPNESS
 
 #######################################################
 #######################################################
@@ -73,6 +73,12 @@ fancy_echo "Instalando NSCD ..."
 fancy_echo "Instalando WHOIS ..."
   sudo apt-get install -y whois
 
+fancy_echo "Instalando RSYNC ..."
+  sudo apt-get install -y rsync
+
+fancy_echo "Instalando REPOSITÓRIOS ..."
+  sudo apt-get install -y 
+
 fancy_echo "Instalando OPENSSH SERVER ..."
   sudo apt-get install -y openssh-server
 
@@ -87,6 +93,12 @@ fancy_echo "Instalando FLATPAK ..."
 
 fancy_echo "Instalando SPEEDTEST ..."
   sudo apt install speedtest-cli
+
+fancy_echo "Instalando HWINFO ..."
+  sudo apt install hwinfo
+  
+fancy_echo "Instalando CONTROLE DE PPAs ..."
+  sudo apt-get install software-properties-common
   
 fancy_echo "Instalando TLP ..."
   sudo apt remove laptop-mode-tools
@@ -138,10 +150,16 @@ fancy_echo "Instalando Workbench (Versão final do Repositório padrão) ..."
 fancy_echo "Instalando Deezer ..."
   sudo apt-get install -y deezer-desktop-for-linux
 
+fancy_echo "Instalando rhythmbox ..."
+  sudo apt install rhythmbox rhythmbox-plugin-alternative-toolbar
+
 fancy_echo "Instalando GIMP ..."
   sudo apt-get install -y gimp
 
-fancy_echo "Instalando GIMP ..."
+fancy_echo "Instalando CALCULADORA DO GNOME ..."
+  sudo apt install gnome-calculator
+
+fancy_echo "Instalando NAUTILUS ..."
   sudo apt-get install -y nautilus nautilus-admin nautilus-wipe nautilus-actions
   
 fancy_echo "Atualizando sistema ..."
